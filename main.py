@@ -8,7 +8,7 @@ today = now.strftime('%A')
 time = now.strftime('%H')
 roomInput = ""
 if str(17) > time > str(15) and today == "Thursday":
-    Rooms.connect(roomInput)
+    Rooms.connect('e5')
 else:
     roomInput = input("Enter room:")
     Rooms.connect(roomInput)

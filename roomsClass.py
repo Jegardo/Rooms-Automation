@@ -26,15 +26,12 @@ class Rooms:
 
         room_link = driver.find_element_by_xpath(f'/html/body/div/a[{room_num}]')
 
-        if str(17) > cls.time > str(15) and cls.today == "Thursday":
-            room_link.click()
-        else:
-            room_link.click()
+        room_link.click()
 
-            try:
-                WebDriverWait(driver, 10).until(EC.alert_is_present(), "Waiting for alert timed out!")
-                alert_obj = driver.switch_to.alert
-                alert_obj.accept()
-            except TimeoutException:
-                print("Can't find the alert box!")
+        try:
+            WebDriverWait(driver, 10).until(EC.alert_is_present(), "Waiting for alert timed out!")
+            alert_obj = driver.switch_to.alert
+            alert_obj.accept()
+        except TimeoutException:
+            print("Can't find the alert box!")
 
